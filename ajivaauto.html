@@ -1,0 +1,695 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    	<meta charset="utf-8" />
+    	<title>ON and OFF page</title>
+    	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    	<link rel="stylesheet" type="text/css" href="sai4.css">
+    	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    	<script src="https://cdn.pubnub.com/sdk/javascript/pubnub.4.8.0.min.js"></script>
+    	<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
+    	<script src="https://cdnjs.cloudflare.com/ajax/libs/paho-mqtt/1.0.1/mqttws31.js" type="text/javascript"></script>
+    	<script src="index1.js"></script>
+    	<script type="text/javascript">
+            $(document).ready(function(){
+                    
+                    app.initialize();
+                
+               
+
+                     var bulb0allState =0;
+                     var bulb1State = 10 ;
+                     var bulb2State = 20 ;
+                     var bulb3State = 30;
+                     var bulb4State = 40;
+                     var bulb5State = 50;
+                     var bulb6State = 60;
+                     var bulb1allState = 2;
+                     var bulb7State = 70;
+                     var bulb8State = 80;
+                     var bulb9State = 90;
+                     var bulb10State = 100;
+                     var bulb11State = 110;
+                     var bulb12State = 120;
+                     var bulb2allState = 4;
+
+                     var fan0allState = 6;
+                     var fan1State = 210;
+                     var fan2State = 220;
+                     var fan3State = 230;
+                     var fan4State = 240;
+                     var fan5State = 250;
+                     var fan6State = 260;
+                     var fan1allState = 8;
+                     var fan7State = 270;
+                     var fan8State = 280;
+                     var fan9State = 290;
+                     var fan10State = 300;
+                     var fan11State = 310;
+                     var fan12State = 320;
+                     var fan2allState = 910;
+                     
+
+
+                    var bulb0a = $('.bulb0all');
+                    var bulb1 = $('.bulb01');
+                    var bulb2 = $('.bulb02');
+                    var bulb3 = $('.bulb03');
+                    var bulb4 = $('.bulb04');
+                    var bulb5 = $('.bulb05');
+                    var bulb6 = $('.bulb06');
+                    var bulb1a = $('.bulb1all');
+                    var bulb7 = $('.bulb07');
+                    var bulb8 = $('.bulb08');
+                    var bulb9 = $('.bulb09');
+                    var bulb10 = $('.bulb10');
+                    var bulb11 = $('.bulb11');
+                    var bulb12 = $('.bulb12');
+                    var bulb2a = $('.bulb2all');
+
+                    var fan0a = $('.fan0all');
+                    var fan1 = $('.fan01');
+                    var fan2 = $('.fan02');
+                    var fan3= $('.fan03');
+                    var fan4 = $('.fan04');
+                    var fan5 = $('.fan05');
+                    var fan6 = $('.fan06');
+                    var fan1a = $('.fan1all');
+                    var fan7 = $('.fan07');
+                    var fan8 = $('.fan08');
+                    var fan9 = $('.fan09');
+                    var fan10 = $('.fan10');
+                    var fan11 = $('.fan11');
+                    var fan12 = $('.fan12');
+                    var fan2a = $('.fan2all');
+                   
+                   var DELAY = 700,
+                    clicks = 0,
+                    timer = null;
+
+
+        bulb0a
+        .on("click", function(e){
+                timer = setTimeout(function() {
+                    
+                    if(bulb0allState == 0){
+                        bulb0allState = 1;
+                    }else if(bulb0allState == 1){
+                        bulb0allState = 0;
+                    }
+
+                    var data = bulb0allState;
+                    
+                    app.pub_publish(data);
+                      
+                }, DELAY);
+            
+        });
+        bulb1
+        .on("click", function(e){
+                timer = setTimeout(function() {
+                    
+                    if(bulb1State == 10){
+                        bulb1State = 11;
+                    }else if(bulb1State == 11){
+                        bulb1State = 10;
+                    }
+
+                    var data = bulb1State;
+                    
+                    app.pub_publish(data);
+                      
+                }, DELAY);
+            
+        });
+        bulb2
+        .on("click", function(e){
+                timer = setTimeout(function() {
+                    
+                    if(bulb2State == 20){
+                        bulb2State = 21;
+                    }else if(bulb2State == 21){
+                        bulb2State = 20;
+                    }
+
+                    var data = bulb2State;
+                    
+                    app.pub_publish(data);
+                      
+                }, DELAY);
+            
+        });
+        bulb3
+        .on("click", function(e){
+                timer = setTimeout(function() {
+                    
+                    if(bulb3State == 30){
+                        bulb3State = 31;
+                    }else if(bulb3State == 31){
+                        bulb3State = 30;
+                    }
+
+                    var data = bulb3State;
+                    
+                    app.pub_publish(data);
+                      
+                }, DELAY);
+            
+        });
+        bulb4
+        .on("click", function(e){
+                timer = setTimeout(function() {
+                    
+                    if(bulb4State == 40){
+                        bulb4State = 41;
+                    }else if(bulb4State == 41){
+                        bulb4State = 40;
+                    }
+
+                    var data = bulb4State;
+                    
+                    app.pub_publish(data);
+                      
+                }, DELAY);
+            
+        });
+        bulb5
+        .on("click", function(e){
+                timer = setTimeout(function() {
+                    
+                    if(bulb5State == 50){
+                        bulb5State = 51;
+                    }else if(bulb5State == 51){
+                        bulb5State = 50;
+                    }
+
+                    var data = bulb5State;
+                    
+                    app.pub_publish(data);
+                      
+                }, DELAY);
+            
+        });
+        bulb6
+        .on("click", function(e){
+                timer = setTimeout(function() {
+                    
+                    if(bulb6State == 60){
+                        bulb6State = 61;
+                    }else if(bulb6State == 61){
+                        bulb6State = 60;
+                    }
+
+                    var data = bulb6State;
+                    
+                    app.pub_publish(data);
+                      
+                }, DELAY);
+            
+        });
+        bulb1a
+        .on("click", function(e){
+                timer = setTimeout(function() {
+                    
+                    if(bulb1allState == 2){
+                        bulb1allState = 3;
+                    }else if(bulb1allState == 3){
+                        bulb1allState = 2;
+                    }
+
+                    var data = bulb1allState;
+                    
+                    app.pub_publish(data);
+                      
+                }, DELAY);
+            
+        });
+        bulb7
+        .on("click", function(e){
+                timer = setTimeout(function() {
+                    
+                    if(bulb7State == 70){
+                        bulb7State = 71;
+                    }else if(bulb1State == 71){
+                        bulb7State = 70;
+                    }
+
+                    var data = bulb7State;
+                    
+                    app.pub_publish(data);
+                      
+                }, DELAY);
+            
+        });
+        bulb8
+        .on("click", function(e){
+                timer = setTimeout(function() {
+                    
+                    if(bulb8State == 80){
+                        bulb8State = 81;
+                    }else if(bulb8State == 81){
+                        bulb8State = 80;
+                    }
+
+                    var data = bulb8State;
+                    
+                    app.pub_publish(data);
+                      
+                }, DELAY);
+            
+        });
+        bulb9
+        .on("click", function(e){
+                timer = setTimeout(function() {
+                    
+                    if(bulb9State == 90){
+                        bulb9State = 91;
+                    }else if(bulb9State == 91){
+                        bulb9State = 90;
+                    }
+
+                    var data = bulb9State;
+                    
+                    app.pub_publish(data);
+                      
+                }, DELAY);
+            
+        });
+        bulb10
+        .on("click", function(e){
+                timer = setTimeout(function() {
+                    
+                    if(bulb10State == 100){
+                        bulb10State = 101;
+                    }else if(bulb10State == 101){
+                        bulb10State = 100;
+                    }
+
+                    var data = bulb10State;
+                    
+                    app.pub_publish(data);
+                      
+                }, DELAY);
+            
+        });
+        bulb11
+        .on("click", function(e){
+                timer = setTimeout(function() {
+                    
+                    if(bulb11State == 110){
+                        bulb11State = 111;
+                    }else if(bulb11State == 111){
+                        bulb11State = 110;
+                    }
+
+                    var data = bulb11State;
+                    
+                    app.pub_publish(data);
+                      
+                }, DELAY);
+            
+        });
+        bulb12
+        .on("click", function(e){
+                timer = setTimeout(function() {
+                    
+                    if(bulb12State == 120){
+                        bulb12State = 121;
+                    }else if(bulb12State == 121){
+                        bulb12State = 120;
+                    }
+
+                    var data = bulb12State;
+                    
+                    app.pub_publish(data);
+                      
+                }, DELAY);
+            
+        });
+        bulb2a
+        .on("click", function(e){
+                timer = setTimeout(function() {
+                    
+                    if(bulb2allState == 4){
+                        bulb2allState = 5;
+                    }else if(bulb2allState == 5){
+                        bulb2allState = 4;
+                    }
+
+                    var data = bulb2allState;
+                    
+                    app.pub_publish(data);
+                      
+                }, DELAY);
+            
+        });
+        fan0a
+        .on("click", function(e){
+                timer = setTimeout(function() {
+                    
+                    if(fan0allState == 6){
+                        fan0allState = 7;
+                    }else if(fan0allState == 7){
+                        fan0allState = 6;
+                    }
+
+                    var data = fan0allState;
+                    
+                    app.pub_publish(data);
+                      
+                }, DELAY);
+            
+        });
+        fan1
+        .on("click", function(e){
+                timer = setTimeout(function() {
+                    
+                    if(fan1State == 210){
+                        fan1State = 211;
+                    }else if(fan1State == 211){
+                        fan1State = 210;
+                    }
+
+                    var data = fan1State;
+                    
+                    app.pub_publish(data);
+                      
+                }, DELAY);
+            
+        });
+        fan2
+        .on("click", function(e){
+                timer = setTimeout(function() {
+                    
+                    if(fan2State == 220){
+                        fan2State = 221;
+                    }else if(fan2State == 221){
+                        fan2State = 220;
+                    }
+
+                    var data = fan2State;
+                    
+                    app.pub_publish(data);
+                      
+                }, DELAY);
+            
+        });
+        fan3
+        .on("click", function(e){
+                timer = setTimeout(function() {
+                    
+                    if(fan3State == 230){
+                        fan3State = 231;
+                    }else if(fan3State == 231){
+                        fan3State = 230;
+                    }
+
+                    var data = fan3State;
+                    
+                    app.pub_publish(data);
+                      
+                }, DELAY);
+            
+        });
+        fan4
+        .on("click", function(e){
+                timer = setTimeout(function() {
+                    
+                    if(fan4State == 240){
+                        fan4State = 241;
+                    }else if(fan4State == 241){
+                        fan4State = 240;
+                    }
+
+                    var data = fan4State;
+                    
+                    app.pub_publish(data);
+                      
+                }, DELAY);
+            
+        });
+        fan5
+        .on("click", function(e){
+                timer = setTimeout(function() {
+                    
+                    if(fan5State == 250){
+                        fan5State = 251;
+                    }else if(fan5State == 251){
+                        fan5State = 250;
+                    }
+
+                    var data = fan5State;
+                    
+                    app.pub_publish(data);
+                      
+                }, DELAY);
+            
+        });
+        fan6
+        .on("click", function(e){
+                timer = setTimeout(function() {
+                    
+                    if(fan6State == 260){
+                        fan6State = 261;
+                    }else if(fan6State == 261){
+                        fan6State = 260;
+                    }
+
+                    var data = fan6State;
+                    
+                    app.pub_publish(data);
+                      
+                }, DELAY);
+            
+        });
+        fan1a
+        .on("click", function(e){
+                timer = setTimeout(function() {
+                    
+                    if(fan1allState == 8){
+                        fan1allState = 9;
+                    }else if(fan1allState == 8){
+                        fan1allState = 9;
+                    }
+
+                    var data = fan1allState;
+                    
+                    app.pub_publish(data);
+                      
+                }, DELAY);
+            
+        });
+        fan7
+        .on("click", function(e){
+                timer = setTimeout(function() {
+                    
+                    if(fan7State == 270){
+                        fan7State = 271;
+                    }else if(fan1State == 271){
+                        fan7State = 270;
+                    }
+
+                    var data = fan7State;
+                    
+                    app.pub_publish(data);
+                      
+                }, DELAY);
+            
+        });
+        fan8
+        .on("click", function(e){
+                timer = setTimeout(function() {
+                    
+                    if(fan8State == 280){
+                        fan8State = 281;
+                    }else if(fan8State == 281){
+                        fan8State = 280;
+                    }
+
+                    var data = fan8State;
+                    
+                    app.pub_publish(data);
+                      
+                }, DELAY);
+            
+        });
+        fan9
+        .on("click", function(e){
+                timer = setTimeout(function() {
+                    
+                    if(fan9State == 290){
+                        fan9State = 291;
+                    }else if(fan9State == 291){
+                        fan9State = 290;
+                    }
+
+                    var data = fan9State;
+                    
+                    app.pub_publish(data);
+                      
+                }, DELAY);
+            
+        });
+        fan10
+        .on("click", function(e){
+                timer = setTimeout(function() {
+                    
+                    if(fan10State == 300){
+                        fan10State = 301;
+                    }else if(fan10State == 301){
+                        fan10State = 300;
+                    }
+
+                    var data = fan10State;
+                    
+                    app.pub_publish(data);
+                      
+                }, DELAY);
+            
+        });
+        fan11
+        .on("click", function(e){
+                timer = setTimeout(function() {
+                    
+                    if(fan11State == 310){
+                        fan11State = 311;
+                    }else if(fan11State == 311){
+                        fan11State = 310;
+                    }
+
+                    var data = fan11State;
+                    
+                    app.pub_publish(data);
+                      
+                }, DELAY);
+            
+        });
+        fan12
+        .on("click", function(e){
+                timer = setTimeout(function() {
+                    
+                    if(fan12State == 320){
+                        fan12State = 321;
+                    }else if(fan12State == 321){
+                        fan12State = 320;
+                    }
+
+                    var data = fan12State;
+                    
+                    app.pub_publish(data);
+                      
+                }, DELAY);
+            
+        });
+        fan2a
+        .on("click", function(e){
+                timer = setTimeout(function() {
+                    
+                    if(fan2allState == 910){
+                        fan2allState = 911;
+                    }else if(fan2allState == 911){
+                        fan2allState = 910;
+                    }
+
+                    var data = fan2allState;
+                    
+                    app.pub_publish(data);
+                      
+                }, DELAY);
+            
+        });
+        
+    });
+
+			
+</script>
+</head>
+<body>
+        <H1 align="center">AJIVIKA CONFERENCE HALL</H1>
+        <table align="center">                  <!-- 1st half -->
+            <tr><h3 align="center" >1st half</h3>
+                <td>ALL BULBS-<button class="bulb0all">ON</td>
+                <td></td>
+                <td>ALL FANS-<button class="fan0all">OFF</td>
+            </tr>
+                <tr>
+                    <td><button class="bulb01">BULB-01</td>
+                    <td></td>
+                    <td><button class="fan01">FAN-01</td>
+            </tr>
+            <tr>
+                <td><button class="bulb02">BULB-02</td>
+                    <td></td>
+                <td><button class="fan02">FAN-02</td>
+            </tr>
+            <tr>
+                <td><button class="bulb03">BULB-03</td>
+                    <td></td>
+                <td><button class="fan03">FAN-03</td>
+                
+            </tr>
+            <tr>
+                <td><button class="bulb04">BULB-04</td>
+                    <td></td>
+                <td><button class="fan04">FAN-04</td>
+            </tr>
+            <tr>
+                <td><button class="bulb05">BULB-05</td>
+                    <td></td>
+                <td><button class="fan05">FAN-05</td>
+            </tr>
+            <tr>
+                <td><button class="bulb06">BULB-06</td>
+                    <td></td>
+                <td><button class="fan06">FAN-06</td>
+            </tr>
+        </table>    
+        
+        <table align="center" border=0>                     <!-- 2nd half -->
+            <tr><h3 align="center" >2nd half</h3>
+                <td>ALL BULBS-<button class="bulb1all">ON</td>
+                <td></td>
+                <td>ALL FANS-<button class="fan1all">OFF</td>
+            </tr>
+                <td><button class="bulb07">BULB-07</td>
+                    <td></td>
+                <td><button class="fan07">FAN-07</td>
+            </tr>
+            <tr>
+                <td><button class="bulb08">BULB-08</td>
+                    <td></td>
+                <td><button class="fan08">FAN-08</td>
+            </tr>
+            <tr>
+                <td><button class="bulb09">BULB-09</td>
+                    <td></td>
+                <td><button class="fan09">FAN-09</td>
+                
+            </tr>
+            <tr>
+                <td><button class="bulb10">BULB-10</td>
+                    <td></td>
+                <td><button class="fan10" >FAN-10</td>
+            </tr>
+            <tr>
+                <td><button class="bulb11">BULB-11</td>
+                    <td></td>
+                <td><button class="fan11">FAN-11</td>
+            </tr>
+            <tr>
+                <td><button class="bulb12">BULB-12</td>
+                    <td></td>
+                <td><button class="fan12">FAN-12</td>
+            </tr>
+        </table>    
+        <table align="center">                                  <!--FULL HALL-->
+            <tr><h3 align="center" >ENTIRE HALL</h3>
+                <td>ALL BULBS-<button class="bulbEall">ON</td>
+                <td></td>
+                <td>ALL FANS-<button class="fanEall">OFF</td>
+            </tr>
+        </table>
+        
+    </body>
+</html>
